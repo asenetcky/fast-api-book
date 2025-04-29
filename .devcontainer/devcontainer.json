@@ -1,0 +1,32 @@
+{
+    "name": "Polars Definitive Guide",
+    "image": "mcr.microsoft.com/devcontainers/python:3",
+    "features": {
+      "ghcr.io/devcontainers/features/python:1": {},
+      "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
+      "ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {}
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "charliermarsh.ruff",
+          "ms-toolsai.jupyter",
+          "vscodevim.vim"
+        ],
+        "settings": {
+          "python.defaultInterpreterPath": "/usr/local/bin/python",
+          "python.editor.formatOnSave": true,
+          "python.editor.defaultFormatter": "charliermarsh.ruff",
+          "notebook.formatOnSave.enabled": true,
+          "python.linting.ruffEnabled": true,
+          "python.linting.enabled": true,
+          "python.linting.flake8Enabled": false,
+          "python.testing.pytestEnabled": true,
+          "editor.lineNumbers": "relative"
+        }
+      }
+    },
+    "postCreateCommand": "uv sync",
+    "remoteUser": "vscode"
+  }
