@@ -1,10 +1,10 @@
-from fastapi import FastAPI, Header
+from fastapi import FastAPI, Body
 
 app = FastAPI()
 
 
 @app.get("/hi")
-def greet(who: str = Header()):
+def greet(who: str = Body(embed=True)):
     return f"Hello? {who}?"
 
 
