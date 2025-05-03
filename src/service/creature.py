@@ -1,4 +1,4 @@
-from models.creature import Creature
+from model.creature import Creature
 import fake.creature as data
 
 
