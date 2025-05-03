@@ -7,7 +7,7 @@ def get_all() -> list[Creature]:
 
 
 def get_one(name: str) -> Creature | None:
-    return data.get(id)  # okay is the id and name mismatch on purpose?
+    return data.get(name)  # okay is the id and name mismatch on purpose?
 
 
 def create(creature: Creature) -> Creature:
@@ -18,9 +18,9 @@ def replace(creature: Creature) -> Creature:
     return data.replace(id, creature)
 
 
-def modify(id, creature: Creature) -> Creature:
+def modify(name: str, creature: Creature) -> Creature:
     return data.modify(id, creature)
 
 
-def delete(id: str) -> bool:
-    return data.delete(id)
+def delete(name: str) -> None:
+    return data.delete(name)

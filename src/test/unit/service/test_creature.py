@@ -21,5 +21,5 @@ def test_get_exists():
 
 
 def test_get_missing():
-    resp = code.get_one("botturle")
-    assert data is None
+    resp = code.get_one("boxturtle")
+    assert resp is None
