@@ -17,6 +17,6 @@ dependencies = [
 dev = ["pytest>=8.3.5"]
 
 [tool.pytest.ini_options]
-testpaths = ["case-study/src/case-study/src/test"]
+testpaths = ["src/test/"]
 python_files = "test_*.py"
 python_functions = "test_*"
