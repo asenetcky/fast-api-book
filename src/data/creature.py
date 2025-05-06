@@ -9,7 +9,6 @@ curs.execute("""create table if not exists creature(
              aka text)""")
 
 
-
 def row_to_model(row: tuple) -> Creature:
     name, description, country, area, aka = row
     return Creature(name, description, country, area, aka)
@@ -41,7 +40,8 @@ def create(creature: Creature):
     curs.execute(qry, params)
     return get_one(creature.name)
 
-def modify(creature: Creature)
+
+def modify(creature: Creature):
     qry = """update creature
     set country=:country,
     name=:name,
@@ -50,13 +50,15 @@ def modify(creature: Creature)
     aka=:aka
     where name=:name_orig"""
     params = model_to_dict(creature)
-    params["mame_orig"] =creature.name
+    params["mame_orig"] = creature.name
     _ = curs.execute(qry, params)
     return get_one(creature.name)
+
 
 # did they forget this one?
 # def replace(creature: Creature):
 #     return creature
+
 
 def delete(creature: Creature):
     qry = "delete from creature where name = :name"
