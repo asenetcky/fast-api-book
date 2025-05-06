@@ -22,7 +22,7 @@ def get_one(name: str) -> Explorer:
     return row_to_model(curs.fetchone())
 
 
-def get_all() -> List[Explorer]:
+def get_all() -> list[Explorer]:
     qry = "select * from explorer"
     curs.execute(qry)
     return [row_to_model(row) for row in curs.fetchall()]
